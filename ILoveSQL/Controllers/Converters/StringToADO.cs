@@ -16,13 +16,6 @@ namespace ILoveSQL.Converters
 
         public bool Convert(DataText dataText)
         {
-            if (dataText.Configuration.ChangeSqlFormat > 1)
-            {
-                // format the SQL Query from input first
-                SqlFormatter formatter = new SqlFormatter();
-                formatter.FormatQuery(dataText.Input);
-            };
-
             string textToAppend = dataText.Configuration.CodeStringBuilder;
             dataText.Output = new String[dataText.Input.Length];
             for (int i = 0; i < dataText.Input.Length; i++)

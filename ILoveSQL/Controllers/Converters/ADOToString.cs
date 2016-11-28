@@ -24,13 +24,6 @@ namespace ILoveSQL.Converters
                 dataText.Output[i] = dataText.Input[i].Replace(textToCut, "").Replace("(\"", "").Replace("\")", "").Trim();
             }
 
-            if (dataText.Configuration.ChangeSqlFormat > 1)
-            {
-                //format the SQL query from output
-                SqlFormatter formatter = new SqlFormatter();
-                formatter.FormatQuery(dataText.Input);
-            };
-
             return true;
         }
     }
